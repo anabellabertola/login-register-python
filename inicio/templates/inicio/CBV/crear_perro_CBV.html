@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title_head %}
+<title>Crear Perro</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+Crear Perro
+{% endblock h1_header %}
+
+{% block contenido %}
+<form action={% url 'inicio:crear_perro' %} method="POST">
+    {% csrf_token %}
+    <table>
+        {{form}}
+        {{form.media}}
+    </table>
+
+    <button>Crear</button>
+</form>
+{% endblock contenido %}
+
+

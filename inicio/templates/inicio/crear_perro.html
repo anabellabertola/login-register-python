@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title_head %}
+<title>Perros</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+Listado de Perros
+{% endblock h1_header %}
+
+{% block contenido %}
+<button>
+    <a class="navbar-brand" href= {% url 'inicio:crear_perro' %}>Crear perro</a>
+</button>
+<form action="" method="get">
+    {{formulario}}
+    <button>Buscar</button>
+</form>
+{% if perros %}
+{% for perro in perros %}
+{% comment "" %}<li>Nombre: {{perro.nombre}} - Edad: {{perro.edad}}</li>
+{% endcomment %}
+<li>
+    {{perro}}
+    <a href={% url 'inicio:eliminar_perro' perro.id%}>Eliminar</a>
+    <a href={% url 'inicio:modificar_perro' perro.id%}>Modificar</a>
+</li>
+{% endfor %}
+{% else %}
+<p>No se encontraron datos cargados.</p>
+{% endif %}
+{% endblock contenido %}
+    
+
+
+ 

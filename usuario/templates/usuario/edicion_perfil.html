@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title_head %}
+<title>Edicion perfil</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+Editar perfil
+{% endblock h1_header %}
+
+{% block contenido %}
+<form action={% url 'usuario:editar_perfil' %} method="post" enctype='multipart/form-data'>
+    {% csrf_token %}
+    <table>
+    {{formulario}}
+    </table>
+    <button>Guardar cambios</button>
+    <button type='button'><a class="navbar-brand" href={% url 'usuario:modificar_pass' %}>Cambiar contraseña</a></button>
+</form> 
+{% endblock contenido %}

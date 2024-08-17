@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title_head %}
+<title>Modificar Perro</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+Modificar Perro
+{% endblock h1_header %}
+
+{% block contenido %}
+<form action="" method="POST">
+    {% csrf_token %}
+    <table>
+        {{formulario}}
+    </table>
+    <button>Modificar</button>
+</form>
+{% endblock contenido %}

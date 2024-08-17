@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title_head %}
+<title>TPrueba</title>
+{% endblock title_head %}
+
+{% block h1_header %}
+Este es el primer template que cree
+{% endblock h1_header %}
+
+{% block contenido %}
+<p>{{mensaje}}</p>
+{% if segundo_redondo %}
+<p style='color: yellow;'>{{segundos}}</p>
+{% elif segundo_par %}
+<p style='color: red;'>{{segundos}}</p>
+{% else %}
+<p style='color: green;'>{{segundos}}</p>
+{% endif %}
+
+{% for numero in listado_de_numeros %}
+<p style='color: blue;'>{{numero}}</p>
+{% endfor %}
+{% endblock contenido %}
+
+
